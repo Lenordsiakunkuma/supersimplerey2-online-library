@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ITC Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+        #dashboard {
+            text-align: center;
+            padding: 50px;
+            background: white;
+            width: 50%;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2c7ad6;
+        }
+        .btn {
+            padding: 10px 20px;
+            background: #d9534f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background: #c9302c;
+        }
+    </style>
+</head>
+<body>
+
+<div id="dashboard">
+    <h2>Admin Dashboard</h2>
+    <p>Total Users: <span id="totalUsers">Loading...</span></p>
+    <p>Total Books: <span id="totalBooks">Loading...</span></p>
+    <button class="btn" onclick="logout()">Logout</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const token = localStorage.getItem("adminToken");
+
+    if (!token) {
+        window.location.href = "admin.html"; // Redirect if not logged in
+    }
+
+    fetch("http://localhost:5000/api/admin/dashboard", {
+        headers: { "Authorization": `Bearer ${token}` }
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("totalUsers").innerText = data.totalUsers;
+        document.getElementById("totalBooks").innerText = data.totalBooks;
+    })
+    .catch(() => {
+        localStorage.removeItem("adminToken");
+        window.location.href = "admin.html";
+    });
+});
+
+function logout() {
+    localStorage.removeItem("adminToken");
+    window.location.href = "admin.html";
+}
+</script>
+
+</body>
+</html>

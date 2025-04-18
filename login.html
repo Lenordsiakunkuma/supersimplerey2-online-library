@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDUSTRIAL TRAINING CENTER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!--Header details-->
+    <header>
+        <div class="header-details">
+            <!--Logo title-->
+            <div class="logo">
+                <h3>ITC LIBRARY ZONE</h3>
+            </div>
+            <!--Navigation Links-->
+            <div class="nav-links" id="on-large-screen"> 
+                <ul>
+                    <li class="fa fa-home"><a href="#">Home</a></li>
+                    <li class="fa fa-image"><a href="#">Gallery</a></li>
+                    <li class="fa fa-user"><a href="admin.html">Admin Login</a></li>
+                    <li class="fa fa-registered"><a href="register.html">Register</a></li>
+                    
+                </ul>
+            </div>  
+            
+            <div> 
+                <i class="fa fa-bars" id="on-mobile-menu" onclick="menuBar()"></i>
+                <i class="fa fa-times" id="close-menu" onclick="closeMenu()"></i>
+            </div> 
+        </div>
+
+        <div id="on-mobile-screen">
+            <ul>
+                <a href="index.html"><li class="fa fa-home">Home</li></a>
+                <a href="#"><li class="fa fa-image">Gallery</li></a>
+                <a href="admin.html"><li class="fa fa-user">Admin Login</li></a>
+                <a href="register.html"><li class="fa fa-registered">Register</li></a>              
+            </ul>
+        </div>
+        <!--Call to action title-->
+        <div class="title">
+            <h3>WELCOME TO INDUSTRIAL TRAINING CENTER LIBRARY ZONE</h3>
+        </div>
+    </header>
+
+    <!--Main Content-->
+    <main class="container">
+        <section class="login-forms">
+           <!--User Login-->
+            <div class="user-login">
+                <div class="user-container">
+                    <h1>Login As Student</h1>
+                    <div class="user-form">
+                        <form action="your-backend-endpoint" method="POST">
+                            <!--Username-->
+                            <div class="details">
+                                <label for="">User Name</label>
+                                <input type="text" name="username" id="username" placeholder="Enter your username...">
+                            </div>
+                            <!--Password-->
+                            <div class="details">
+                                <label for="">Password</label>
+                                <input type="password" name="password" id="password" placeholder="Enter your password...">
+                            </div>
+                            <button>Login</button>
+                        </form>
+                        <p>Forget password?<a href="#">recover</a> </p>
+                    </div>
+                </div>
+            </div> 
+            <!--Admin Login-->
+            <div class="admin-login">
+                <div class="admin-container">
+                    <h1>Login As Lecturer</h1>
+                    <div class="admin-form">
+                        <form action="your-backend-endpoint" method="POST">
+                            <!--Username-->
+                            <div class="details">
+                                <label for="">User Name</label>
+                                <input type="text" name="username" id="username" placeholder="Enter your username...">
+                            </div>
+                            <!--Password-->
+                            <div class="details">
+                                <label for="">Password</label>
+                                <input type="password" name="password" id="password" placeholder="Enter your password...">
+                            </div>
+                            <button>Login</button>
+                        </form>
+                        <p>Forget password?<a href="#">recover</a> </p>
+                    </div>
+                </div>
+            </div> 
+        </section>
+    </main> 
+    
+    <!--Footer details-->
+    <footer class="footer-details">
+        <div class="footer-top">
+            <!--Social Media links-->
+        <div class="social-media-links">
+            <h3>Stay Connected</h3>
+            <div class="links">
+                <a href="https://www.facebook.com/yourprofile" class="fa fa-facebook"></a>
+                <a href="https://www.instagram.com/yourprofile" class="fa fa-instagram"></a>
+                <a href="https://www.twitter.com/yourprofile" class="fa fa-twitter"></a>
+            </div>
+        </div>
+        <!--contact links-->
+        <div class="contact-links">
+            <h3>Contact Address</h3>
+            <div class="links">
+                <a href="https://www.google.com/maps/place/ITC+buyantashi+road" class="fa fa-home"> ITC Buyantashi road</a><br>
+                <a href="tel:+260211247718" class="fa fa-phone"> 0211 247718 </a><br>
+                <a href="mailto:reynardsiakunkuma@gmail.com" class="fa fa-envelope"> reynardsiakunkuma@gmail.com </a>
+            </div>
+        </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Developed By: Reynard Siakunkuma</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

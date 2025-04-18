@@ -1,0 +1,150 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Library</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background: #004aad;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-weight: 500;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .section {
+      padding: 2rem;
+      text-align: center;
+    }
+    .section h2 {
+      color: #004aad;
+      margin-bottom: 1rem;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .feature {
+      background: #fff;
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      flex: 1 1 300px;
+      max-width: 300px;
+    }
+    .cta {
+      background: #004aad;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    .cta a {
+      background: #fff;
+      color: #004aad;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0.5rem;
+      display: inline-block;
+    }
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+    }
+    @media (max-width: 768px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .hero h1 { font-size: 2rem; }
+      .features { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">📚 ITC Online Library </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="books.html">Books</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to the Future of Learning</h1>
+  </section>
+
+  <section class="section">
+    <h2>About Us</h2>
+    <p>Our Online Library gives you access to thousands of academic resources, tutorials, handouts, past papers, and more. Whether you're a student or a lecturer, we’ve got you covered.</p>
+  </section>
+
+  <section class="section features">
+    <div class="feature">
+      <h3>🎓 For Students</h3>
+      <p>Access study materials, subscribe weekly or monthly, and learn at your own pace.</p>
+    </div>
+    <div class="feature">
+      <h3>👩‍🏫 For Lecturers</h3>
+      <p>Upload tutorials, books, and handouts directly to the platform for your students.</p>
+    </div>
+    <div class="feature">
+      <h3>💳 Easy Payments</h3>
+      <p>Pay for subscriptions via Airtel Money or Zanaco Bank, securely and quickly.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Get Started Today</h2>
+    <a href="register.html">Register Now</a>
+    <a href="login.html">Login</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Online Library | Built by Lenord Siakunkuma 💻
+  </footer>
+
+</body>
+</html>

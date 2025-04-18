@@ -158,3 +158,80 @@
 
 
     
+    /* === MOBILE RESPONSIVENESS === */
+@media (max-width: 768px) {
+    #logo {
+      width: 100%;
+      font-size: 30px;
+    }
+  
+    #menu1 {
+      width: 100%;
+      padding-left: 0;
+    }
+  
+    #menu1 UL {
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #menu1 LI {
+      width: 100%;
+      font-size: 18px;
+      transform: none;
+    }
+  
+    #slider {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    #x,
+    #y {
+      width: 100%;
+      height: auto;
+      float: none;
+    }
+  
+    #x {
+      padding: 40px 10px;
+      font-size: 24px;
+    }
+  
+    #y {
+      padding: 20px 10px;
+    }
+  
+    #l {
+      width: 90%;
+      height: auto;
+      margin: 30px auto;
+      float: none;
+      padding: 20px;
+    }
+  
+    #student {
+      margin: 20px 10px;
+    }
+  
+    .t {
+      font-size: 16px;
+    }
+  
+    #top {
+      flex-direction: column;
+      padding: 10px;
+      text-align: center;
+      height: auto;
+    }
+  
+    #down {
+      height: auto;
+      padding: 20px 10px;
+    }
+  }
+  
+    

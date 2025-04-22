@@ -22,60 +22,43 @@
 </head>
 <body>
     <div id="background">
-    <div id="top">
-    <a href="#" class="fa fa-envelope" style="text-decoration:none; color: white;">
-    reynardsiakunkuma@gmail.com
-    </a>
-
-    <a href="#" class="fa fa-phone" style="text-decoration:none; color: white;">
-    +260772566890
-    </a>
-
-    <a href="https://www.facebook.com/itczambia?mibextid=ZbWKwL" class="fa fa-facebook" style="text-decoration:none; padding:7px; float:right; color: white;"></a>
-
-    <a href="#" class="fa fa-instagram" style="text-decoration:none; padding:7px; float:right; color: white;"></a>
-
-    <a href="#" class="fa fa-twitter" style="text-decoration:none; padding: 7px ; float:right; color: white;"></a>
-
-    <a href="https://wa.me/+260772566890" class=" fa fa-whatsapp" style="color: rgb(248, 248, 248); padding:7px; float:right;"></a>
-
-</div>
-<div id="menu">
-<div id="logo">ITC LIBRARY<b style="color:#2c7ad6 ;">ZONE</b></div>
-<div id="menu1">
-<ul>
-    <a href="index.html"><li class="fa fa-home">Home</li></a>
-    <a href="#"><li class="fa fa-image">Gallery</li></a>
-    <a href="admin.html"><li class="fa fa-user">Admin Login</li></a>
-    <a href="register.html"><li class="fa fa-registered">Register</li></a>
-    <a href="index.html"><li class="fa fa-user">Login</li></a>
-</ul>
-</div>   
-</div> 
-
-     <!-- menuBar -->
-<div> 
-    <i class="fa fa-bars" id="on-mobile-menu" onclick="menuBar()"></i>
-    <i class="fa fa-times" id="close-menu" onclick="closeMenu()"></i>
-</div> 
-</div>
-
-<div id="on-mobile-screen">
-<ul>
-    <a href="index.html"><li class="fa fa-home">Home</li></a>
-    <a href="#"><li class="fa fa-image">Gallery</li></a>
-    <a href="admin.html"><li class="fa fa-user">Admin Login</li></a>
-    <a href="register.html"><li class="fa fa-registered">Register</li></a>              
-</ul>
-</div>
-
+        <header id="main-header">
+            <div id="desktop-header">
+              <!-- ITC Logo -->
+              <div id="logo">
+                <img src="itc_log.jpg" alt="ITC Logo" style="height: 50px;">
+              </div>
+          
+              <!-- OPEN LIBRARY Text -->
+              <div id="header-title">
+                <h1>OPEN LIBRARY</h1>
+              </div>
+          
+              <!-- Search Bar -->
+              <div id="search-bar">
+                <input type="text" placeholder="Search books, articles, etc." />
+                <button class="fa fa-search" id="search-btn"></button>
+              </div>
+          
+              <!-- Hamburger Menu (hidden on desktop) -->
+              <i class="fa fa-bars" id="hamburger" onclick="toggleMobileMenu()"></i>
+            </div>
+          
+            <!-- Mobile Menu -->
+            <div id="mobile-menu">
+              <button onclick="window.location.href='login.html'">Login</button>
+              <button onclick="window.location.href='register.html'">Sign Up</button>
+              <button class="close-menu" onclick="toggleMobileMenu()">Close</button>
+            </div>
+          </header>
+          
 <div id="slider" style="background:url(ITC2.jpg);">
 <div id="x">WELCOME TO ITC OPEN LIBRARY<b style="color: blue;">ZONE</b>
 <p style="font-size: 15PX;">
-      Open Library represents a tremendous asset for institutions such as schools,
-      universities, and libraries. By providing free access to an extensive digital collection of books,
-      it supports educational initiatives and research efforts across various fields. Institutions can leverage
-      Open Library’s resources to supplement their own collections, offering students and researchers access to rare and historical texts.
+       ITC is a tertiary education institution under the Ministry of Technology and Science. 
+       We offer training in Engineering, 
+       Transport & Driver training, Information & Communication Technology. 
+       We also offer tailor-made courses
 </p>
 </div> 
 <div id="y">
@@ -111,9 +94,10 @@
 </div>
 <div id="down">
 <h3>Stay Connected</h3>
-<a href="#" class="fa fa-facebook" style="text-decoration: none; padding: 10px 12px;color: white;"></a>
-<a href="#" class="fa fa-instagram" style="text-decoration: none; padding: 10px 12px;color: white;"></a>
-<a href="#" class="fa fa-twitter" style="text-decoration: none; padding: 10px 12px;color: white;"></a>
+    <a href="#" class="fa fa-facebook" style="text-decoration: none; padding: 10px 12px;color: white;"></a>
+    <a href="#" class="fa fa-instagram" style="text-decoration: none; padding: 10px 12px;color: white;"></a>
+    <a href="#" class="fa fa-twitter" style="text-decoration: none; padding: 10px 12px;color: white;"></a>
+    <a href="https://wa.me/+260772566890" class=" fa fa-whatsapp" style="text-decoration: none; padding: 10px 12px;color: white;"></a>
 <h2>Contact Address</h2>
 <a href="#" class="fa fa-home" style="text-decoration: none; padding: 10px 12px;color: white;">
 ITC LUSAKA ADDRESS
@@ -126,24 +110,24 @@ We are located at Plot Number 36354, Buyantashi Road, Heavy Industrial Area, Lus
 <div class="footer">
     
     <footer>
-        &copy; 2025 Online Library | Built by Lenord Siakunkuma 💻
+        &copy; 2025 Online Library | Built by Lenord Siakunkuma 
       </footer>
 </div>
 </div>
 
 <script>
-    function menuBar() {
-      document.getElementById('on-mobile-screen').style.display = 'block';
-      document.getElementById('on-mobile-menu').style.display = 'none';
-      document.getElementById('close-menu').style.display = 'inline-block';
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     }
-    
-    function closeMenu() {
-      document.getElementById('on-mobile-screen').style.display = 'none';
-      document.getElementById('on-mobile-menu').style.display = 'inline-block';
-      document.getElementById('close-menu').style.display = 'none';
-    }
-    </script>
+  </script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
+  
     
 </body>
 </html>

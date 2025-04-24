@@ -1,22 +1,21 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Online Library</title>
+  <title>ITC Online Library</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f4f4f4;
-      line-height: 1.6;
+      background-color: #f9fbfd;
       color: #333;
+      line-height: 1.6;
     }
     header {
-      background: #004aad;
-      color: #fff;
+      background-color: #003366;
+      color: white;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -25,85 +24,166 @@
     }
     .logo {
       font-size: 1.5rem;
-      font-weight: bold;
+      font-weight: 600;
     }
     nav a {
-      color: #fff;
+      color: white;
       text-decoration: none;
-      margin-left: 1rem;
+      margin-left: 1.2rem;
       font-weight: 500;
     }
     .hero {
-      background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
       height: 70vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: white;
       text-align: center;
       padding: 0 2rem;
     }
     .hero h1 {
-      font-size: 3rem;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 1rem;
+      font-size: 2.8rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
       border-radius: 10px;
     }
     .section {
-      padding: 2rem;
+      padding: 3rem 2rem;
       text-align: center;
     }
     .section h2 {
-      color: #004aad;
-      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: #003366;
+      margin-bottom: 1.5rem;
     }
-    .features {
+    .features, .news, .gallery, .reviews {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 2rem;
     }
-    .feature {
-      background: #fff;
-      margin: 1rem;
-      padding: 1rem;
+    .feature, .news-card, .review-card {
+      background: white;
+      padding: 1.5rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      flex: 1 1 300px;
-      max-width: 300px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      flex: 1 1 280px;
     }
+    .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.gallery-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: 280px;
+}
+.gallery-card:hover {
+  transform: translateY(-5px);
+}
+.gallery-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.gallery-card h4 {
+  margin: 1rem 1rem 0.5rem;
+  color: #003366;
+}
+.gallery-card p {
+  margin: 0 1rem 1rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
     .cta {
-      background: #004aad;
-      color: #fff;
+      background-color: #003366;
+      color: white;
       padding: 2rem;
-      text-align: center;
     }
     .cta a {
-      background: #fff;
-      color: #004aad;
+      background: white;
+      color: #003366;
       padding: 0.75rem 1.5rem;
-      border-radius: 5px;
       text-decoration: none;
-      font-weight: bold;
+      border-radius: 6px;
+      font-weight: 600;
       margin: 0.5rem;
       display: inline-block;
     }
     footer {
-      background: #222;
-      color: #ccc;
+      background: #111;
+      color: #bbb;
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
     }
     @media (max-width: 768px) {
       header { flex-direction: column; align-items: flex-start; }
       .hero h1 { font-size: 2rem; }
-      .features { flex-direction: column; align-items: center; }
+      .features, .news, .gallery, .reviews { flex-direction: column; }
     }
+
+    .gallery-slider {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: 280px;
+  flex-shrink: 0;
+}
+.gallery-card:hover {
+  transform: translateY(-5px);
+}
+.gallery-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.gallery-card h4 {
+  margin: 1rem 1rem 0.5rem;
+  color: #003366;
+}
+.gallery-card p {
+  margin: 0 1rem 1rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* 🔄 Enable horizontal scroll on mobile */
+@media (max-width: 768px) {
+  .gallery-slider {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gallery-card {
+    scroll-snap-align: center;
+    margin: 0 0.5rem;
+  }
+}
+
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">📚 ITC Online Library </div>
+    <div class="logo">📚 ITC Online Library</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="login.html">Login</a>
@@ -113,12 +193,18 @@
   </header>
 
   <section class="hero">
-    <h1>Welcome to the Future of E-Learning</h1>
+    <h1>Empowering Students and Lecturers<br>through Digital Resources</h1>
   </section>
 
-  <section class="section">
+  <section class="section"> 
     <h2>About Us</h2>
-    <p>Our Online Library gives you access to thousands of academic resources, tutorials, handouts, past papers, and more. Whether you're a student or a lecturer, we’ve got you covered.</p>
+    <p>
+      Open Library represents a tremendous asset for institutions such as schools,
+      universities, and libraries. By providing free access to an extensive digital collection of books,
+      it supports educational initiatives and research efforts across various fields. Institutions can leverage
+      Open Library’s resources to supplement their own collections, offering students and researchers access to rare and historical texts.
+      Our Online Library gives you access to thousands of academic resources, tutorials, handouts, past papers, and more. Whether you're a student or a lecturer, we’ve got you covered.
+    </p>
   </section>
 
   <section class="section features">
@@ -136,15 +222,164 @@
     </div>
   </section>
 
+  <section class="section">
+    <h2>📢 Announcements</h2>
+    <p>🚀 New courses launching this term. Don't miss out!</p>
+  </section>
+
+  <section class="section">
+    <h2>📘 Course & Resource Previews</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Networking</h3>
+        <p>Hands-on labs, routing & switching, and simulation tools.</p>
+      </div>
+      <div class="feature">
+        <h3>Database</h3>
+        <p>Practice SQL, build ER models, and manage schemas.</p>
+      </div>
+      <div class="feature">
+        <h3>Programming</h3>
+        <p>From basics to advanced in JavaScript, Python, and C++.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>📰 Latest News</h2>
+    <div class="news">
+      <div class="news-card">
+        <h4>TRANSAID CONSORTIUM DIRECTORS VISIT</h4>
+        <p>
+          TRANSAID CONSORTIUM DIRECTORS VISIT TO ITC ON 22/05/2024. In August 2008, 
+          Transaid partnered with the Industrial Training Centre Trust (ITC) 
+           the only public commercial driver training Centre in Zambia 
+            to build capacity to deliver professional HGV driver training to internationally recognized standards.
+          The partnership with Transaid UK has elevated ITC's training capabilities in the transport sector.
+           The donation of truck units, Forklift trucks and the computer simulator have enriched the
+            learning experience for our students, while the training provided to our instructors has
+           ensured that our programs remain at the forefront of industry standards. ITC is deeply grateful for Transaid UK's support, 
+          which has had a lasting and positive impact on both the institution and the future professionals trainees.
+        </p>
+      </div>
+      <div class="news-card">
+        <h4>principal Mr Lloyd Mbasela on Radio 4</h4>
+        <p>
+          ITC principal Mr Lloyd Mbasela on Radio 4 highlighting how the
+           Constituency Development Fund(CDF) 
+           has benefited our Nation and youths at large.
+         <a href="https://web.facebook.com/share/v/14crk5hdqC/" >https://web.facebook.com/share/v/14crk5hdqC/</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <h2>🏫 School Gallery</h2>
+    <div class="gallery-slider">
+      <div class="gallery-card">
+        <img src="itc.jpg" alt="Admin Block">
+        <h4>Admin Block</h4>
+        <p>Main building where administrative operations take place.</p>
+      </div>
+      <div class="gallery-card">
+        <img src="itc2.jpg" alt="Library">
+        <h4>Library</h4>
+        <p>Academic library with thousands of digital & physical books.</p>
+      </div>
+      <div class="gallery-card">
+        <img src="ITC2.jpg" alt="Computer Lab">
+        <h4>Computer Lab</h4>
+        <p>Labs equipped with PCs for programming, networking, and simulation.</p>
+      </div>
+      <div class="gallery-card">
+        <img src="ITC2.jpg" alt="Computer Lab">
+        <h4>Computer Lab</h4>
+        <p>Labs equipped with PCs for programming, networking, and simulation.</p>
+      </div>
+      <div class="gallery-card">
+        <img src="ITC2.jpg" alt="Computer Lab">
+        <h4>Computer Lab</h4>
+        <p>Labs equipped with PCs for programming, networking, and simulation.</p>
+      </div>
+      <div class="gallery-card">
+        <img src="ITC2.jpg" alt="Computer Lab">
+        <h4>Computer Lab</h4>
+        <p>Labs equipped with PCs for programming, networking, and simulation.</p>
+      </div>
+      <div class="gallery-card">
+        <img src="ITC2.jpg" alt="Computer Lab">
+        <h4>Computer Lab</h4>
+        <p>Labs equipped with PCs for programming, networking, and simulation.</p>
+      </div>
+      <div class="gallery-card">
+        <img src="images/com lab.jpg" alt="Computer Lab">
+        <h4>Computer Lab</h4>
+        <p>Labs equipped with PCs for programming, networking, and simulation.</p>
+      </div>
+      <div class="gallery-card">
+        <img src="images/comp lab.jpg" alt="Computer Lab">
+        <h4>Computer Lab</h4>
+        <p>Labs equipped with PCs for programming, networking, and simulation.</p>
+      </div>
+      <div class="gallery-card">
+        <img src="images/computer lab.jpg" alt="Computer Lab">
+        <h4>Computer Lab</h4>
+        <p>Labs equipped with PCs for programming, networking, and simulation.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <h2>⭐ Student Voices</h2>
+    <div class="reviews">
+      <div class="review-card">
+        <p>"I used the online handouts to prep for finals — super helpful!"</p>
+        <strong>- Mirriam M.</strong>
+      </div>
+      <div class="review-card">
+        <p>"The past papers section is a game changer. Highly recommend!"</p>
+        <strong>- Idah N.</strong>
+      </div>
+    </div>
+  </section>
+
   <section class="cta">
-    <h2>Get Started Today</h2>
-    <a href="register.html">Register Now</a>
+    <h2>Start Learning Today</h2>
+    <a href="register.html">Register</a>
     <a href="login.html">Login</a>
   </section>
 
   <footer>
-    &copy; 2025 Online Library | Built by Lenord Siakunkuma 💻
+    &copy; 2025 ITC Online Library. Crafted by Lenord Siakunkuma 💻
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slider = document.querySelector('.gallery-slider');
+      let scrollAmount = 0;
+      const scrollStep = 100; // Adjust based on card width
+      const scrollInterval = 3000; // Time in milliseconds
+  
+      function autoScroll() {
+        if (!slider) return;
+  
+        scrollAmount += scrollStep;
+        if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+          scrollAmount = 0;
+        }
+  
+        slider.scrollTo({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+  
+      // Only enable auto-scroll on small screens
+      if (window.innerWidth < 768) {
+        setInterval(autoScroll, scrollInterval);
+      }
+    });
+  </script>
+  
 </body>
 </html>

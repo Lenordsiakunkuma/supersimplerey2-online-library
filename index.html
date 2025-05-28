@@ -2,8 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ITC Online Library</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/android-chrome-512x512.png">
+    <link rel="manifest" href="images/site.webmanifest">
+
+  <title>Home | ITC Online Library</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -33,7 +40,7 @@
       font-weight: 500;
     }
     .hero {
-      background: url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      background: url(images/itc.jpg) center/cover no-repeat;
       height: 70vh;
       display: flex;
       align-items: center;
@@ -178,23 +185,124 @@
   }
 }
 
+
+
+
+.video-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.video-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 300px;
+}
+
+.video-card h4 {
+  padding: 10px;
+  text-align: center;
+}
+
+.video-card video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+
+.announcement-box {
+  background: #e6f0ff;
+  border-left: 5px solid #2c7ad6;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.announcement-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.announcement-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #003366;
+}
+
+#announcementText {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+#announcementTime {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.hero {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 2rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+}
+
+footer a {
+  color: #bbb;
+  text-decoration: none;
+}
+footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+footer span {
+  font-size: 1.1rem;
+  margin-right: 4px;
+}
+
+
+
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">📚 ITC Online Library</div>
+  <div class="logo">
+
+  <img src="images/itc-logo.png" alt="ITC Logo" style="height: 35px; vertical-align: middle; margin-right: 8px;">
+  <span style="vertical-align: middle;">ITC Online Library</span>
+</div>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="login.html">Login</a>
       <a href="register.html">Register</a>
       <a href="books.html">Books</a>
+      <a href="course.html">Reviews</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Empowering Students and Lecturers<br>through Digital Resources</h1>
-  </section>
+  <section class="hero" id="hero">
+  <h1>Empowering Students and Lecturers<br>through Digital Resources</h1>
+</section>
 
   <section class="section"> 
     <h2>About Us</h2>
@@ -210,11 +318,15 @@
   <section class="section features">
     <div class="feature">
       <h3>🎓 For Students</h3>
-      <p>Access study materials, subscribe weekly or monthly, and learn at your own pace.</p>
+      <p>
+        Access study materials, subscribe weekly or monthly, and learn at your own pace.
+      </p>
     </div>
     <div class="feature">
       <h3>👩‍🏫 For Lecturers</h3>
-      <p>Upload tutorials, books, and handouts directly to the platform for your students.</p>
+      <p>
+        Upload tutorials, books, and handouts directly to the platform for your students.
+      </p>
     </div>
     <div class="feature">
       <h3>💳 Easy Payments</h3>
@@ -224,8 +336,17 @@
 
   <section class="section">
     <h2>📢 Announcements</h2>
-    <p>🚀 New courses launching this term. Don't miss out!</p>
+    <div class="announcement-box" id="announcementBox">
+      <div class="announcement-header">
+        <span>📢</span>
+        <h3>Latest Announcement</h3>
+      </div>
+      <p id="announcementText">Loading...</p>
+      <small id="announcementTime"></small>
+    </div>
+    
   </section>
+  
 
   <section class="section">
     <h2>📘 Course & Resource Previews</h2>
@@ -247,40 +368,14 @@
 
   <section class="section">
     <h2>📰 Latest News</h2>
-    <div class="news">
-      <div class="news-card">
-        <h4>TRANSAID CONSORTIUM DIRECTORS VISIT</h4>
-        <p>
-          TRANSAID CONSORTIUM DIRECTORS VISIT TO ITC ON 22/05/2024. In August 2008, 
-          Transaid partnered with the Industrial Training Centre Trust (ITC) 
-           the only public commercial driver training Centre in Zambia 
-            to build capacity to deliver professional HGV driver training to internationally recognized standards.
-          The partnership with Transaid UK has elevated ITC's training capabilities in the transport sector.
-           The donation of truck units, Forklift trucks and the computer simulator have enriched the
-            learning experience for our students, while the training provided to our instructors has
-           ensured that our programs remain at the forefront of industry standards. ITC is deeply grateful for Transaid UK's support, 
-          which has had a lasting and positive impact on both the institution and the future professionals trainees.
-        </p>
-      </div>
-      <div class="news-card">
-        <h4>principal Mr Lloyd Mbasela on Radio 4</h4>
-        <p>
-          ITC principal Mr Lloyd Mbasela on Radio 4 highlighting how the
-           Constituency Development Fund(CDF) 
-           has benefited our Nation and youths at large.
-         <a href="https://web.facebook.com/share/v/14crk5hdqC/" >https://web.facebook.com/share/v/14crk5hdqC/</a>
-        </p>
-      </div>
+    <div class="news" id="newsFeed">
+      <!-- News cards will be inserted here -->
     </div>
   </section>
+  
   <section class="section">
     <h2>🏫 School Gallery</h2>
     <div class="gallery-slider">
-      <div class="gallery-card">
-        <img src="itc.jpg" alt="Admin Block">
-        <h4>Admin Block</h4>
-        <p>Main building where administrative operations take place.</p>
-      </div>
       <div class="gallery-card">
         <img src="images/ed.jpg" alt="ITC principal">
         <h4>Mr Lloyd Mbasela</h4>
@@ -309,10 +404,44 @@
         <p>Labs equipped with PCs for programming, networking, and simulation.</p>
       </div>
     </div>
+
+  </section>
+
+  <section class="section">
+    <h2>🎬Student Voices</h2>
+    <div class="video-gallery">
+      <div class="video-card">
+        <video controls width="100%">
+          <source src="uploads/videos/CSE.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h4>Computer Systems Engineering Diploma
+          Duration: 2 years
+          Fees; K7,894.00 per year
+          ITC, Your premiere training provider!,</h4>
+      </div>
+  
+      <div class="video-card">
+        <video controls width="100%">
+          <source src="uploads/videos/electrical.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h4>Campus Life</h4>
+      </div>
+
+      <div class="video-card">
+        <video controls width="100%">
+          <source src="uploads/videos/ED.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h4>ITC principal Mr Lloyd Mbasela on Radio 4 </h4>
+      </div>
+    </div>
   </section>
   
+  
   <section class="section">
-    <h2>⭐ Student Voices</h2>
+    <h2>⭐ Student Reviews</h2>
     <div class="reviews">
       <div class="review-card">
         <p>"I used the online handouts to prep for finals — super helpful!"</p>
@@ -331,37 +460,35 @@
     <a href="login.html">Login</a>
   </section>
 
-  <footer>
-    &copy; 2025 ITC Online Library. Crafted by Lenord Siakunkuma 💻
-  </footer>
+ <footer>
+  <div class="contact-info">
+    <h3>Contact Address</h3>
+    <p>
+      <span>🏢</span>
+      <a href="https://www.google.com/maps?q=Plot+36354,+Buyantanshi+Road,+Lusaka" target="_blank">
+        Plot 36354, Buyantanshi Road, P.O. Box 34785, Lusaka
+      </a><br>
+      
+      <span>📞</span> Tel:
+      <a href="tel:+260211247717">+0211 247717</a> /
+      <a href="tel:+260211247718">247718</a>,
+      <a href="tel:+260211244177">244177</a><br>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const slider = document.querySelector('.gallery-slider');
-      let scrollAmount = 0;
-      const scrollStep = 10; // Adjust based on card width
-      const scrollInterval = 3000; // Time in milliseconds
-  
-      function autoScroll() {
-        if (!slider) return;
-  
-        scrollAmount += scrollStep;
-        if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
-          scrollAmount = 0;
-        }
-  
-        slider.scrollTo({
-          left: scrollAmount,
-          behavior: 'smooth'
-        });
-      }
-  
-      // Only enable auto-scroll on small screens
-      if (window.innerWidth < 768) {
-        setInterval(autoScroll, scrollInterval);
-      }
-    });
-  </script>
+      <span>📠</span> Fax:
+      <a href="tel:+260211243531">+0211 243531</a><br>
+
+      <span>✉️</span> Email:
+      <a href="mailto:itczambia123@gmail.com">itczambia123@gmail.com</a>
+    </p>
+  </div>
+
+  <div style="margin-top: 1rem;">
+    &copy; 2025 ITC Online Library. Crafted by Lenord Siakunkuma 💻
+  </div>
+</footer>
+
+
+  <script src="js/home.js"></script>
   
 </body>
 </html>
